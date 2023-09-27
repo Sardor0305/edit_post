@@ -12,7 +12,7 @@ import org.telegram.telegrambots.meta.generics.LongPollingBot;
 public class JoinlinkBot extends TelegramLongPollingBot {
 
     public JoinlinkBot() {
-        super("5506783854:AAGMgD0RDVCP_6cBYJuaEPPlwQWfeSIr78A");
+        super("6405316738:AAFFYx6AvJ8qA_F27xU7mxYO0Hs7r7NxAxM");
     }
 
 
@@ -44,6 +44,6 @@ public class JoinlinkBot extends TelegramLongPollingBot {
 
     @Override
     public String getBotUsername() {
-        return "Mybookuz_bot";
+        return "Raximov14_bot";
     }
 }
