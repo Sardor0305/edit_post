@@ -15,7 +15,7 @@ public class ChannelPostProcess {
     public static void process(Update update, TelegramLongPollingBot bot) {
 
 
-        System.out.println(update.getChannelPost());
+ 
 
         if (LinkSave.SAVE_LINK_MAP.containsKey(UpdateIdProcess.chatId(update))
                 && UserButtonState.USER_BUTTON_STATE_MAP.containsKey(update.getChannelPost().getChatId())
