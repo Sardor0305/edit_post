@@ -15,14 +15,14 @@ public class GetJoinLink {
         UserButtonState.USER_BUTTON_STATE_MAP.get(UpdateIdProcess.chatId(update)).equals(UserState.DEFAULT)) {
 
                 UserButtonState.USER_BUTTON_STATE_MAP.put(UpdateIdProcess.chatId(update),UserState.CREATElINK);
-              LinkSave.SAVE_LINK_MAP.put(UpdateIdProcess.chatId(update),update.getChannelPost().getText());
+              LinkSave.save(UpdateIdProcess.chatId(update),update.getChannelPost().getText());
                 try {
                     bot.execute(SendMessage.builder()
                                     .chatId(update.getChannelPost().getChatId())
 //                                    .messageId(update.getChannelPost().getMessageId())
                                     .text("✅ Link shu ko'rinishda bo'ladi\n\n" +
                                             "\uD83D\uDC47\uD83D\uDC47\uD83D\uDC47 \n\n" +
-                                            LinkSave.SAVE_LINK_MAP.get(UpdateIdProcess.chatId(update))+"\n\n" +
+                                            LinkSave.read(UpdateIdProcess.chatId(update))+"\n\n" +
                                             "\uD83D\uDC46\uD83D\uDC46\uD83D\uDC46 \n")
 
                             .build());

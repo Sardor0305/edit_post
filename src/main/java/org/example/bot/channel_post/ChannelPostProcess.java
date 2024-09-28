@@ -17,14 +17,14 @@ public class ChannelPostProcess {
 
  
 
-        if (LinkSave.SAVE_LINK_MAP.containsKey(UpdateIdProcess.chatId(update))
+        if (LinkSave.read(UpdateIdProcess.chatId(update)) !=null
                 && UserButtonState.USER_BUTTON_STATE_MAP.containsKey(update.getChannelPost().getChatId())
                 && UserButtonState.USER_BUTTON_STATE_MAP.get(update.getChannelPost().getChatId()).equals(UserState.CREATElINK)
         ) {
 
 
             try {
-                String username = LinkSave.SAVE_LINK_MAP.get(UpdateIdProcess.chatId(update));
+                String username = LinkSave.read(UpdateIdProcess.chatId(update));
                 MessageEntity messageEntity = new MessageEntity();
                 messageEntity.setType("bold");
                 bot.execute(EditMessageCaption.builder()

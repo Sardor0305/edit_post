@@ -20,7 +20,7 @@ public class DeleteProcess {
                 throw new RuntimeException(e);
             }
 
-             LinkSave.SAVE_LINK_MAP.remove(UpdateIdProcess.chatId(update));
+             LinkSave.remove(UpdateIdProcess.chatId(update));
         }
     }
 }
