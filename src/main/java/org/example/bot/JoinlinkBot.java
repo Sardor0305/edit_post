@@ -12,31 +12,27 @@ import org.telegram.telegrambots.meta.generics.LongPollingBot;
 public class JoinlinkBot extends TelegramLongPollingBot {
 
     public JoinlinkBot() {
-        super("6405316738:AAFFYx6AvJ8qA_F27xU7mxYO0Hs7r7NxAxM");
+        super("7027650865:AAHlCdoJORA0tp-rn02YVQxX-d5bmb2Cb88");
     }
 
 
     @Override
-    public void onUpdateReceived(Update update){
-        if(update.hasMessage()){
-           if(update.getMessage().hasText()){
-               StartState.startProcess(update,this);
-           }
+    public void onUpdateReceived(final Update update) {
+        if (update.hasMessage()) {
+            if (update.getMessage().hasText()) {
+                StartState.startProcess(update, this);
+            }
 
-        }
-        else if(update.hasCallbackQuery()){
-            CallbackProcess.process(update,this);
+        } else if (update.hasCallbackQuery()) {
+            CallbackProcess.process(update, this);
 
-
-        }
-        else if (update.hasChannelPost() &&
-                    update.getChannelPost().getCaption() != null
-                    && update.getChannelPost().getForwardFromChat() == null
-                    && update.getChannelPost().getForwardFrom() == null) {
-                ChannelPostProcess.process(update, this);
-        }
-        else if (update.hasChannelPost() && update.getChannelPost().hasText()) {
-            ShowCallBack.showBtnProcess(update,this);
+        } else if (update.hasChannelPost() &&
+                update.getChannelPost().getCaption() != null
+                && update.getChannelPost().getForwardFromChat() == null
+                && update.getChannelPost().getForwardFrom() == null) {
+            ChannelPostProcess.process(update, this);
+        } else if (update.hasChannelPost() && update.getChannelPost().hasText()) {
+            ShowCallBack.showBtnProcess(update, this);
             GetJoinLink.process(update, this);
         }
 
@@ -44,6 +40,6 @@ public class JoinlinkBot extends TelegramLongPollingBot {
 
     @Override
     public String getBotUsername() {
-        return "Raximov14_bot";
+        return "Tokhirov_postbot";
     }
 }

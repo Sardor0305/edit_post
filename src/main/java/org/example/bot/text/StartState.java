@@ -7,7 +7,7 @@ import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
 public class StartState {
 
-    public static void startProcess(Update update, TelegramLongPollingBot bot) {
+    public static void startProcess(final Update update, final TelegramLongPollingBot bot) {
         if (update.getMessage().getText().equals("/start")) {
             try {
                 bot.execute(SendMessage.builder()
@@ -16,7 +16,7 @@ public class StartState {
                                 "BU bot nima qila oladi?\n" +
                                 "Bot sizga kanal link qo'sha oladi \n" +
                                 "Buning uchun botni kanalga admin qilishingiz uzi kifoya\uD83D\uDC6E\n" +
-                                "@Raximov14_bot kalit suzni yozing va havola kiriting\n" +
+                                "@Tokhirov_postbot kalit suzni yozing va havola kiriting\n" +
                                 "CHEKLOVLAR\n" +
                                 "❌ Tepasida 'forward' qilingan xabarlarga post qo'ymaydi\n" +
                                 "❌ Captionsiz xabarlarga post qo'ymaydi")
